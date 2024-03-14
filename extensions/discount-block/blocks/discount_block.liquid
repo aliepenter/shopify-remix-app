@@ -1,0 +1,31 @@
+<discount-block class="d-none dmp_discount-block-preview" data-currency="{{ shop.currency }}">
+  <div class="dmp_discount-form">
+    <input type="text" name="temp-discount" class="" placeholder="Discount Code">
+    <button>Apply</button>
+  </div>
+  <script type="application/json" class="bsCartItems">
+    [
+      {%- for item in cart.items -%}
+        {%- liquid
+            assign price = item.original_line_price | divided_by: 100 | ceil
+            assign original_price = item.original_price | divided_by: 100 | ceil
+            assign id = '"id":' | append: item.product_id
+            assign quantity = '"quantity":' | append: item.quantity
+            assign variant_id = '"variant_id":' | append: item.variant_id
+            assign final_line_price = '"final_line_price":' | append: price
+            assign original_price = '"original_price":' | append: original_price
+        -%}
+        { {{ id }}, {{ quantity }}, {{ variant_id }}, {{ final_line_price }}, {{ original_price }}}
+        {%- unless forloop.last -%},{%- endunless forloop.last -%}
+      {%- endfor -%}
+    ]
+  </script>
+</discount-block>
+{% schema %}
+{
+  "name": "Discount Master Pro",
+  "target": "body",
+  "javascript": "bluesky-toolkit.js",
+  "stylesheet": "bluesky-toolkit.css"
+}
+{% endschema %}

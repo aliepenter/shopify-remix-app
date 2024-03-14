@@ -1,0 +1,26 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "c4300b0d6931643a361e3d203604cafd"
+name = "Bluesky Toolkit"
+application_url = "https://discount-master-pro-ac981cd15f3f.herokuapp.com/"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "hayshirt263.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_discounts,read_price_rules,read_themes,write_discounts,write_draft_orders,write_orders,write_price_rules,write_products,write_shipping,write_themes"
+
+[auth]
+redirect_urls = [
+  "https://discount-master-pro-ac981cd15f3f.herokuapp.com/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-01"
+
+[pos]
+embedded = false

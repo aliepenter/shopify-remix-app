@@ -1,0 +1,59 @@
+.d-none{
+    display: none;
+}
+.dmp_discount-block-preview{
+    width: 100%;
+    text-align: left !important;
+}
+
+.dmp_discount-form {
+    display: flex;
+}
+
+.dmp_discount-form input{
+    margin: 0;
+    border-width: 1px !important;
+    border-style: solid !important;
+    padding: 10px;
+    flex: 1 auto;
+    border-radius: 3px;
+    margin: 0 10px 0 0 !important;
+    max-height: 40px;
+}
+.dmp_discount-form button{
+    width: 20% !important;
+}
+
+.dmp_discount-tag {
+    background-color: rgba(113, 113, 113, 0.21);
+    padding: 5px;
+    border-radius: 4px;
+    line-height: 20px;
+    display: inline-block;
+    margin: 10px 5px 5px 0px;
+}
+.dmp_discount-tag .dmp_discount-code {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    color: inherit;
+}
+
+.dmp_discount-tag .dmp_discount-code span {
+    margin-left: 3px;
+}
+
+.dmp_discount-tag .dmp_discount-code button {
+    outline: none;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    font-size: 15px;
+    width: 26% !important;
+}
+
+.dmp_discount-savings, .dmp_total-information, .dmp_discount-freeship {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

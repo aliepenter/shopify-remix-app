@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:dev.sqlite"
+}
+
+model Session {
+  id          String    @id
+  shop        String
+  state       String
+  isOnline    Boolean   @default(false)
+  scope       String?
+  expires     DateTime?
+  accessToken String
+  userId      BigInt?
+}
+
+model userSession {
+  id     Int    @id @default(autoincrement())
+  themeAuthor String?
+  storeName String?
+  themeName String?
+  email String?
+  themeId String?
+  enableAppEmbed Boolean @default(false)
+  customizeStatus Boolean @default(false)
+}
+
+model themes {
+  id     Int    @id @default(autoincrement())
+  themeName String?
+  themeParent String?
+  themePreviewUrl String?
+  themeFolderPath String?
+  themePreviewImageUrl String?
+}
+
+model updateStatus {
+  id     Int    @id @default(autoincrement())
+  date DateTime @default(now())
+  changeLogs String?
+  version String?
+  changeLogLink String?
+}
